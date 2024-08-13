@@ -33,9 +33,7 @@ export default function Dashboard({formData, handleSubmit, setFormData}) {
         <Typography fontWeight={700} gutterBottom variant="h3" component="div" sx={{fontFamily: 'DM Sans', color:'#E0E0E0'}}>
         Dashboard
         </Typography>
-        
       </CardContent>
-      
       <Switch
       checked={checked}
       onChange={handleChange}
@@ -55,8 +53,6 @@ export default function Dashboard({formData, handleSubmit, setFormData}) {
           backgroundColor: '#bdbdbd', // Background color when unchecked
         },
       }}
-    />
-      
     />
 
     <EditForm formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} />

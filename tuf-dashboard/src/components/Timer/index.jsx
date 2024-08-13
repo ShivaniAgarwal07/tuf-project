@@ -5,15 +5,21 @@ import Typography from '@mui/material/Typography';
 const Timer = ({timer, setFormData}) => {
     useEffect(() => {
         if (timer === 0) return;
-        const timerId = setInterval(() => {
-          setFormData(prevFormData => ({
-            ...prevFormData,
-            timer: prevFormData.timer - 1
-          }));
-        }, 1000);
-    
+        console.log(timer)
+        if (timer>0){
+          const timerId = setInterval(() => {
+            setFormData(prevFormData => ({
+              ...prevFormData,
+              timer: prevFormData.timer - 1
+            }));
+          }, 1000);
         return () => clearInterval(timerId);
+
+        }
+        
+    
       }, [timer, setFormData]);
+      
 
   return (
     <div>
