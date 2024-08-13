@@ -12,7 +12,17 @@ function EditForm({formData, setFormData, handleSubmit}) {
     });
   };
 
-
+  const handleTimerChange = (e) => {
+  
+    const { name, value } = e.target;
+    if(value>0){
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+   
+  };
 
   return (
     <Box
@@ -61,7 +71,6 @@ function EditForm({formData, setFormData, handleSubmit}) {
           value={formData.description}
           onChange={handleChange}
           required
-          
         />
         <TextField
           label="URL"
@@ -101,11 +110,13 @@ function EditForm({formData, setFormData, handleSubmit}) {
           margin="normal"
           name="timer"
           value={formData.timer}
-          onChange={handleChange}
+          onChange={handleTimerChange}
           required
           InputProps={{
         style: { color: 'white' },
+
       }}
+      
           InputLabelProps={{
         style: { color: 'white' },
       }}
